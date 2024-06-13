@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { TaskInput } from './TaskInput';
 import { TaskList } from './TaskList';
 import { Title } from '@mantine/core';
+import { FaClipboardList } from "react-icons/fa";
 
 interface Task {
   id: number;
@@ -33,7 +34,10 @@ export const App: React.FC = () => {
 
   return (
     <div>
-      <Title >To do List</Title>
+      <div className='flex gap-8 items-center'>
+        <Title >To do List</Title>
+        <FaClipboardList size={35}/>
+      </div> 
       <TaskInput addTask={addTask}/>
       <TaskList tasks={tasks} deleteTask={deleteTask} toggleCheck={toggleCheck} />
     </div>
